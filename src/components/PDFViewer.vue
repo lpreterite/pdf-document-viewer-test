@@ -43,15 +43,33 @@ export default {
             removePageBorders: true,
             linkService: this.linkService
         })
+        console.log(viewer)
 
         this.linkService.setDocument(pdfDocument)
         this.linkService.setViewer(viewer)
         this.viewer.setDocument(pdfDocument)
     },
     render(createElement){
-        const wrapper = createElement('div', [createElement("div", "The pdf veiwer fail!")])
+        const wrapper = createElement('div', { class:"pdf-viewer" }, [createElement("div", "The pdf veiwer fail!")])
         this.$$wrapper = wrapper
         return wrapper
     }
 }
 </script>
+<style lang="scss" scoped>
+.pdf-viewer{
+    position: relative;
+    overflow: hidden;
+}
+</style>
+<style lang="scss">
+.page{
+    position: relative;
+    overflow: hidden;
+}
+.textLayer{
+    z-index: 2;
+    opacity: 1;
+    mix-blend-mode: multiply;
+}
+</style>
