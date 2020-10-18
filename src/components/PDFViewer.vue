@@ -1,6 +1,6 @@
 <script>
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist/lib/pdf";
-import PdfjsWorker from "worker-loader!pdfjs-dist/lib/pdf.worker";
+import PdfjsWorker from "pdfjs-dist/lib/pdf.worker";
 import { EventBus, PDFViewer, PDFLinkService } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 
