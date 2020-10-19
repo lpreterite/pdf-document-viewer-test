@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-    <PDFViewer url="东风日产供应商购车指南.pdf" />
+    <h1>PDF预览例子</h1>
+    <p>
+      <button @click="pdf_url='东风日产供应商购车指南.pdf'">默认文档</button>
+      <button @click="pdf_url='pdf样本/1599126417040.pdf'">pdf样本/1599126417040.pdf</button>
+      <button @click="pdf_url='pdf样本/转换不了.pdf'">pdf样本/转换不了.pdf</button>
+      <button @click="pdf_url='pdf样本/最大.pdf'">pdf样本/最大.pdf</button>
+    </p>
+    <PDFViewer :url="pdf_url" />
   </div>
 </template>
 
@@ -13,6 +17,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      pdf_url: "东风日产供应商购车指南.pdf"
+    }
+  },
   components: {
     HelloWorld,
     PDFViewer
